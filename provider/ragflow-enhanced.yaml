@@ -1,0 +1,48 @@
+credentials_for_provider:
+  app_url:
+    label:
+      en_US: Api Server Url
+    placeholder:
+      en_US: Api Server Url
+      zh_Hans: Api Server Url, 完整的URL
+    required: true
+    type: text-input
+  app_key:
+    help:
+      en_US: API Key
+      zh_Hans: API Key
+    label:
+      en_US: API Key
+    placeholder:
+      en_US: API Key
+      zh_Hans: API Key
+    required: true
+    type: text-input
+  dify_url:
+    help:
+      en_US: Dify Url  https://cloud.dify.ai
+      zh_Hans: Dify Url 處理文件必須要：https://cloud.dify.ai
+    label:
+      en_US: Dify Url
+    placeholder:
+      en_US: Dify Url  https://cloud.dify.ai
+      zh_Hans: Dify Url https://cloud.dify.ai
+    required: false
+    type: text-input
+identity:
+  author: "chenjingnan"
+  name: "ragflow-enhanced"
+  label:
+    en_US: "ragflow-enhanced"
+    zh_Hans: "ragflow-增强检索"
+    pt_BR: "ragflow-enhanced"
+  description:
+    en_US: "ragflow"
+    zh_Hans: "ragflow"
+    pt_BR: "ragflow"
+  icon: "icon.svg"
+tools:
+  - tools/ragflow-enhanced.yaml
+extra:
+  python:
+    source: provider/ragflow-enhanced.py
