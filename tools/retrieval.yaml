@@ -1,14 +1,14 @@
 identity:
-  name: "ragflow-enhanced"
+  name: "retrieval"
   author: "chenjingnan"
   label:
-    en_US: "ragflow enhanced"
-    zh_Hans: "检索数据块，并组装文档提示词"
+    en_US: "retrieval"
+    zh_Hans: "检索数据块"
 description:
   human:
-    en_US: "ragflow enhanced"
-    zh_Hans: "检索数据块，并组装文档提示词"
-  llm: "ragflow enhanced"
+    en_US: "retrieval"
+    zh_Hans: "检索数据块"
+  llm: "retrieval"
 parameters:
   - name: question
     type: string
@@ -116,4 +116,4 @@ parameters:
     type: number
 extra:
   python:
-    source: tools/ragflow-enhanced.py
+    source: tools/retrieval.py

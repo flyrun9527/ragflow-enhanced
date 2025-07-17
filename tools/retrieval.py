@@ -4,7 +4,7 @@ from typing import Any
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
-from tools.utils import RagflowClient, kb_prompt
+from tools.utils import RagflowClient
 
 
 class RagflowEnhancedTool(Tool):
@@ -53,25 +53,16 @@ class RagflowEnhancedTool(Tool):
                 "similarity_threshold": similarity_threshold,
                 "vector_similarity_weight": vector_similarity_weight,
                 "keyword": keyword
-                
             }
 
             res = client.post(route_method='/api/v1/retrieval', data_obj=parsed_data)
             response_json = res.json() if res.status_code == 200 else {}
             data = response_json.get("data", {})
             
-            if not data:
-                yield self.create_text_message("No data returned from retrieval API")
-                return
-                
-            if not isinstance(data, dict) or "chunks" not in data:
-                yield self.create_text_message("Invalid data structure returned from retrieval API")
-                return
-
-            knowledge = kb_prompt(data, app_id, app_url)
-            
             yield self.create_json_message({
-                "result": knowledge
+                "chunks": data.get("chunks", []),
+                "doc_aggs": data.get("doc_aggs", []),
+                "total": data.get("total", 0),
             })
         except Exception as e:
             yield self.create_text_message(f"Retrieval error: {str(e)}")

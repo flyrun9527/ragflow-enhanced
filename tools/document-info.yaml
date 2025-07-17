@@ -1,0 +1,26 @@
+identity:
+  name: "document-info"
+  author: "chenjingnan"
+  label:
+    en_US: "document info"
+    zh_Hans: "根据数据块获取文档信息，并组装文档提示词"
+description:
+  human:
+    en_US: "document info"
+    zh_Hans: "根据数据块获取文档信息，并组装文档提示词"
+  llm: "document info"
+parameters:
+  - name: chunks
+    type: string
+    required: true
+    label:
+      en_US: chunks
+      zh_Hans: 数据块
+    human_description:
+      en_US: chunks
+      zh_Hans: 数据块
+    llm_description: 数据块
+    form: llm
+extra:
+  python:
+    source: tools/document-info.py

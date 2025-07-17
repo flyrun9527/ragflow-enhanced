@@ -43,6 +43,8 @@ identity:
   icon: "icon.svg"
 tools:
   - tools/ragflow-enhanced.yaml
+  - tools/retrieval.yaml
+  - tools/document-info.yaml
 extra:
   python:
     source: provider/ragflow-enhanced.py

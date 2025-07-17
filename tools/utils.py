@@ -63,15 +63,8 @@ def kb_prompt(kbinfos,app_id,app_url):
         knowledges.append(txt)
     return knowledges
 
-def num_tokens_from_string(string: str) -> int:
-    """Returns the number of tokens in a text string."""
-    try:
-        return len(encoder.encode(string))
-    except Exception:
-        return 0
-
 class RagflowClient:
-    """RagFlow接口的處理器"""
+    """RagFlow接口的处理器"""
 
     def __init__(self, app_key: str = '', app_url: str = ''):
         self.base_url = app_url

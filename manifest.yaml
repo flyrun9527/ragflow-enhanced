@@ -1,4 +1,4 @@
-version: 0.0.6
+version: 0.0.9
 type: plugin
 author: chenjingnan
 name: ragflow-enhanced
@@ -6,8 +6,8 @@ label:
   en_US: ragflow-enhanced
   zh_Hans: ragflow-增强检索
 description:
-  en_US: ragflow
-  zh_Hans: ragflow
+  en_US: ragflow-enhanced
+  zh_Hans: ragflow-增强检索
 icon: icon.svg
 resource:
   memory: 268435456
@@ -31,7 +31,7 @@ resource:
       size: 1048576
 plugins:
   tools:
-    - provider/ragflow-enhanced.yaml
+      - provider/ragflow-enhanced.yaml
 meta:
   version: 0.0.1
   arch:
